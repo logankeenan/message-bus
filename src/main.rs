@@ -112,7 +112,7 @@ impl ActorB {
         tokio::spawn(async move {
             loop {
                 sleep(Duration::from_secs(3)).await;
-                let message = Message::ActorBMessage(ActorBMessage { data: "A, are you still theading? from B".to_string() });
+                let message = Message::ActorAMessage(ActorAMessage { data: "A, are you still theading? from B".to_string() });
                 bus_sender.send(message).await;
             }
 
